@@ -1,0 +1,91 @@
+:root{
+  --bg: #fffdf6;
+  --accent: #ffd54a;
+  --text: #333;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #f7f3ec 100%);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:var(--text);
+}
+
+.card{
+  background:#fff;
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 8px 30px rgba(30,30,30,0.08);
+  text-align:center;
+}
+.headline{
+  font-family: 'Playfair Display', serif;
+  font-size:2rem;
+  color:#3b2f1f;
+  margin-bottom:8px;
+}
+.sub{margin-bottom:18px;opacity:0.9}
+.btn{
+  background:linear-gradient(180deg,var(--accent),#ffb300);
+  border:none;
+  padding:12px 20px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(255,165,0,0.18);
+  transition:transform .18s ease;
+}
+.btn:active{transform:translateY(2px)}
+
+.gift{
+  text-align:center;
+  z-index:2;
+}
+.hidden{display:none}
+.reveal-text{
+  font-weight:600;
+  margin-bottom:12px;
+  font-size:1.2rem;
+}
+.gift-img{
+  max-width:260px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* efecto latido */
+.beating {
+  animation: beatAnimation 2s ease-in-out infinite;
+}
+
+@keyframes beatAnimation {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  50% { transform: scale(0.95); }
+  75% { transform: scale(1.05); }
+}
+
+/* Animación de flores cayendo */
+.flower{
+  position:fixed;
+  top:-50px;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+.flower.emoji{
+  font-size:2rem;
+}
+.flower.img{
+  width:40px;
+  height:40px;
+}
+
+/* movimiento de caída */
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);opacity:0;}
+}
